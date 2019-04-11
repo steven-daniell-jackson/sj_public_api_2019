@@ -1,0 +1,9 @@
+{
+  "env": {
+    "MONGO_USER": "public-admin",
+    "MONGO_PASSWORD": "M4gUMZPp8q4Dq4cR",
+    "MONGO_HOST": "cluster0-egcwh.mongodb.net",
+    "MONGO_DB": "sj-public-2019",
+    "SECRET_KEY": "xM7r0y0vjBd29p1m"
+  }
+}

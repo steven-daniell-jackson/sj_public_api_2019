@@ -1,0 +1,157 @@
+Task Queries
+
+query	{
+  tasks {
+    _id
+    taskName
+    description
+    status
+    githubLink
+    _createdAt
+  }
+}
+
+mutation {
+  getTask (taskOne: {_id: "5c6f9ec0ec86a00024537181"}) {
+    _id
+    taskName
+    description
+    status
+    githubLink
+  }
+}
+
+mutation{
+  createTask(taskInput: {taskName: "Test Task2", description: "Task Description", status:"Open", githubLink: "www.sdsdfs.com"}) {
+    taskName
+    description
+    status
+    githubLink
+    _createdAt
+    _id
+  }
+}
+
+mutation {
+   updateTask (taskUpdate: {_id: "5c7007e45465930024525413", taskName: "Update", description: "Task Description", status:"Open", githubLink: "www.sdsdfs.com"}) {
+    _id
+    taskName
+    description
+    status
+    githubLink
+ 
+  }
+}
+
+User Queries
+
+query {
+  users {
+    _id
+    email
+    password
+    firstName
+    lastName
+    age
+    dateOfBirth
+    address
+    ethnicity
+    contactNumber
+    hobbies
+    profileImg
+    active
+    _createdAt
+  }
+}
+
+query {
+  login(email: "sj.com", password: "123"){
+    userId
+    token
+    tokenExpiration
+  }
+}
+
+mutation {
+createUser (userInput: { email: "newUser11@test.com", 
+  password: "123", 
+  firstName: "firstName", 
+  lastName: "Last Name"
+    age: 24
+    dateOfBirth: "dateOfBirth"
+    address: "address"
+    ethnicity: "ethnicity"
+    contactNumber: "contactNumber"
+    hobbies: "hobbies"
+    profileImg: "profileImg"
+    priviledges: "priviledges"
+    active: "true"
+
+}) {
+  email
+  password
+  firstName
+  lastName
+  age
+    dateOfBirth
+    address
+    ethnicity
+    contactNumber
+    hobbies
+    profileImg
+    priviledges
+    active
+  _createdAt
+  _id
+}
+}
+
+
+Product Queries
+query {
+  products {
+    _id
+    productName
+    description
+    shortDescription
+    price
+     salePrice
+    quantity
+    virtual
+    active
+    productImgs
+    category
+    subCategories
+    _createdAt
+  }
+}
+
+mutation {
+  createProduct(productInput: {
+    productName: "Test Product 2", 
+    description:"Product Description", 
+    active: true,
+    shortDescription: "Product Short Description",
+    price: 99,
+    salePrice: 50,
+    quantity: 22,
+    virtual: true,
+    productImgs: "www.domain.com/imgs/demo-img.jpg",
+    category: "Product Category",
+    subCategories: "Product Categories"
+    }) {
+    _id
+      productName
+      description
+    shortDescription
+    price
+    salePrice
+    quantity
+    virtual
+    active
+    productImgs
+    category
+    subCategories
+  _createdAt
+  }
+}
